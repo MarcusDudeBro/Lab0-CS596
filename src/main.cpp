@@ -7,7 +7,6 @@ uint16_t minValue;
 float brightness;
 int inPin = GPIO_NUM_27;
 int outPin = GPIO_NUM_33;
-// Tried using GPIO_NUM_37 but didn't work, why?
 int ledPin = GPIO_NUM_17;
 unsigned long startTime;
 float prevTime;
@@ -38,6 +37,5 @@ void loop() {
 		brightness = float(value - minValue)/(maxValue - minValue);
 		if(brightness > 1) brightness = 1.0;
 		myservo.write(brightness*179);
-		Serial.print(value); Serial.print(" "); Serial.println(brightness);
 	}
 }
